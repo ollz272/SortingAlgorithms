@@ -1,0 +1,50 @@
+#include <iostream>
+
+/*void swap(int a,int b)
+{
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}*/
+
+
+int partition( int *array, int start, int end)
+{
+	int pivot = array[end];
+	int pIndex = start;
+	for(int i = start; i < end; i++)
+	    {
+		if(array[i] <= pivot){
+			std::swap(array[i],array[pIndex]);
+			pIndex ++;
+		}
+		
+	}
+	std::swap(array[pIndex],array[end]);
+	return pIndex;
+}
+
+void Quicksort(int *array, int start, int end)
+{
+	if(start < end) {
+		int pIndex = partition(array, start, end);
+		Quicksort(array, start, pIndex -1);
+		Quicksort(array, pIndex + 1, end);
+	}
+}
+
+int main() 
+{
+	int array[]
+	std::cout << "Please enter your 10 values";
+	for(int i = 0, i <= 9, i++){
+		std::cin >> array[i]
+	}
+	std:: cout << "the sorted list is the following:" << std::endl;
+	Quicksort(array,0,9);
+	for(int i = 0; i <= 9; i++){
+		std::cout << array[i] << std::endl;
+	}
+	return 0;
+}
